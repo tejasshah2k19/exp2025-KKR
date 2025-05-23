@@ -1,0 +1,73 @@
+project 
+
+
+1 : servlet api : 3.0.1 
+
+database -> mysql 
+
+create database exp25; 
+
+use exp25; 
+
+
+create table expenses (
+	expenseId int primary key auto_increment,
+	title varchar(25),
+	amount int,
+	category varchar(20),
+	expenseDate date 
+);
+
+
+java -> mysql -> connection 
+jdbc 
+
+database driver -> mysql -> mysql connector maven 
+
+
+DbConnection.java -> util -> com 
+	com.util.DbConnection 
+	
+	
+	
+AddExpense.jsp 
+		input 
+				title 
+				amt 
+				date 
+				category 
+					
+	
+	
+	
+	
+	
+	delete from expenses where expenseId = ?
+	
+	
+	pstmt.setInt(1,expenseId); 
+	
+	pstmt.executeUpdate();
+	
+	response.sendRedirect("ListExpenseController"); 
+	
+------------------------------------------------------------------------
+
+vendor table ->
+			vendorId PK 
+			vendorName 
+			
+			create table vendor( vendorId int primary key auto_increment, vendorName varchar(20));
+				
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
