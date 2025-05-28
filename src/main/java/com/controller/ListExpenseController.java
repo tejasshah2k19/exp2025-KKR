@@ -12,8 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bean.ExpenseBean;
+import com.bean.UserBean;
 import com.util.DbConnection;
 
 @WebServlet("/ListExpenseController")
@@ -22,10 +24,15 @@ public class ListExpenseController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ArrayList<ExpenseBean> list = new ArrayList<>();
+		
+		HttpSession session = request.getSession();
+		UserBean user = (UserBean) session.getAttribute("user");
+		 
 		try {
 			Connection con = DbConnection.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("select * from expenses");
-
+			PreparedStatement pstmt = con.prepareStatement("select * from expenses where userId = ? ");
+			pstmt.setInt(1, user.getUserId());
+			
 			ResultSet rs = pstmt.executeQuery();// 3 records
 			
 			

@@ -49,6 +49,7 @@ body, html {
 						<tr>
 							<th>Id</th>
 							<th>Name</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,8 +59,9 @@ body, html {
 						<tr>
 							<td><%=bean.getVendorId()%></td>
 							<td><%=bean.getVendorName()%></td>
+							<td><a href="DeleteVendorController?vendorId=<%=bean.getVendorId()%>">Delete</a> | view </td>
 
-						</tr>
+						</tr>  
 						<%
 						}
 						%>
