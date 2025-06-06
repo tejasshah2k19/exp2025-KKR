@@ -62,6 +62,39 @@ vendor table ->
 	
 	
 	
+------------------------------------------------------
+
+listener --> 
+	server -> 
+		web app -> events -> listen -> action perform 
+									server start 
+									server stop 
+											
+									session create -> user 50 session 
+									session destroy -> logout  		
+
+
+1) class implements XXXListener 
+2) override 
+3) @WebListener 
+-----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	

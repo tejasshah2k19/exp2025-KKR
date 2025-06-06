@@ -39,6 +39,8 @@
 
             <a href="SearchExpense.jsp" class="btn btn-success btn-lg">Search By Category</a>
             
+            <a href="CategoryWiseChartController" class="btn btn-lg btn-info">Chart 1</a>
+            
           </div>
         </div> 
       </section>
